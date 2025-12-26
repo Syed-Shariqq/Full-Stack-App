@@ -1,0 +1,14 @@
+# Backend
+Assignment-Reminder-BackEnd/target/
+Assignment-Reminder-BackEnd/*.log
+Assignment-Reminder-BackEnd/application.properties
+Assignment-Reminder-BackEnd/.env
+
+# Frontend
+Assignment-Reminder-FrontEnd/node_modules/
+Assignment-Reminder-FrontEnd/dist
+Assignment-Reminder-FrontEnd/.env
+
+# OS / Editor
+.DS_Store
+.vscode/

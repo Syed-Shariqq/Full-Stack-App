@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+.scrollbar::-webkit-scrollbar{
+    display : none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  transform: scale(1.2);
+  margin-right: 1.2rem;
+  cursor: pointer;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  transform: scale(1.2);
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+input[type="time"] {
+  color-scheme: dark;
+}
+
+/* Glass container */
+.calendar-glass {
+  background: linear-gradient(
+    145deg,
+    rgba(31, 31, 39, 0.9),
+    rgba(18, 18, 25, 0.9)
+  );
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.15);
+}
+
+/* Override react-calendar */
+.react-calendar {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+.react-calendar__navigation {
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.react-calendar__navigation button {
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  color: #a855f7;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.react-calendar__tile {
+  background: transparent;
+  border-radius: 10px;
+  height: 60px;
+  color: white;
+  margin: 7px;
+  cursor: pointer;
+}
+
+.react-calendar__tile:enabled:hover {
+  background: rgba(168, 85, 247, 0.2);
+}
+
+.react-calendar__tile--now {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.react-calendar__tile--active {
+  background: linear-gradient(135deg, #6366f1, #ec5eff);
+}
+
+/* Assignment dot */
+.dot {
+  margin-top: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ec5eff;
+  box-shadow: 0 0 8px #ec5eff;
+}
+
+/* Right panel */
+.glass-panel {
+  background: rgba(31, 31, 39, 0.9);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.15);
+}
+
+.assignment-card {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
