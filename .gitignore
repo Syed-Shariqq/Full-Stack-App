@@ -28,3 +28,6 @@ Assignment-Reminder-FrontEnd/.env
 # ===============================
 .DS_Store
 .vscode/
+
+# IDE
+.idea/
