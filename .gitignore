@@ -1,14 +1,30 @@
-# Backend
+# ===============================
+# Backend (Spring Boot)
+# ===============================
 Assignment-Reminder-BackEnd/target/
 Assignment-Reminder-BackEnd/*.log
 Assignment-Reminder-BackEnd/application.properties
 Assignment-Reminder-BackEnd/.env
 
-# Frontend
+# Java / Maven
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+.mtj.tmp/
+hs_err_pid*
+replay_pid*
+
+# ===============================
+# Frontend (React)
+# ===============================
 Assignment-Reminder-FrontEnd/node_modules/
 Assignment-Reminder-FrontEnd/dist
 Assignment-Reminder-FrontEnd/.env
 
+# ===============================
 # OS / Editor
+# ===============================
 .DS_Store
 .vscode/
