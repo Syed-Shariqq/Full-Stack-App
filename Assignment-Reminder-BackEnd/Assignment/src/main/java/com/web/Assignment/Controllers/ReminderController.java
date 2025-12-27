@@ -1,11 +1,9 @@
 package com.web.Assignment.Controllers;
 
 import com.web.Assignment.DTO.ReminderRequest;
-import com.web.Assignment.Entity.Assignment;
 import com.web.Assignment.Entity.AssignmentStatus;
 import com.web.Assignment.Entity.User;
 import com.web.Assignment.Repository.AssignmentStatusRepository;
-import com.web.Assignment.Services.AssignmentService;
 import com.web.Assignment.Services.ReminderService;
 import com.web.Assignment.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +16,6 @@ import java.security.Principal;
 @RequestMapping("/reminders")
 public class ReminderController {
 
-    @Autowired
-    private AssignmentService assignmentService;
 
     @Autowired
     private ReminderService reminderService;

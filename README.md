@@ -367,7 +367,8 @@ This project is open source. See LICENSE file for details (if applicable).
 
 ## 👤 Author
 
-Developed as an assignment/portfolio project.
+**Syed Shariq**
+- GitHub: [@Syed-Shariqq](https://github.com/Syed-Shariqq)
 
 ## 📞 Support
 

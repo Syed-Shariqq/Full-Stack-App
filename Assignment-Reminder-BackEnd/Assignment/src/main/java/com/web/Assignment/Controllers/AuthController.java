@@ -4,7 +4,6 @@ import com.web.Assignment.Config.JwtUtil;
 import com.web.Assignment.Entity.AuthResponse;
 import com.web.Assignment.Entity.Role;
 import com.web.Assignment.Entity.User;
-import com.web.Assignment.Repository.UserRepository;
 import com.web.Assignment.Services.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +13,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 
 @RestController
