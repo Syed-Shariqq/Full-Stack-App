@@ -47,7 +47,7 @@ const NotFound = () => {
         {/* Back Button */}
         <div className="mt-12">
           <button 
-            onClick={() => navigate(-1)}
+            onClick={() => navigate("/")}
             className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold tracking-wider text-white uppercase transition-all duration-300 bg-transparent border-2 border-black rounded-none hover:bg-gray-500/10 hover:shadow-[0_0_30px_rgba(0,0,0,1)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900"
           >
             <Home className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors" />

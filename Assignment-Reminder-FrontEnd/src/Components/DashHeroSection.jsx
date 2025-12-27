@@ -11,6 +11,7 @@ const DashHeroSection = () => {
 
   const token = localStorage.getItem("token");
   const user = token ? jwtDecode(token) : null;
+  const role = localStorage.getItem("role");
 
   const {
    addAssignment,
@@ -23,7 +24,6 @@ const DashHeroSection = () => {
             try {
               const response = await getAllAssignments();
               setAssignments(response.data); 
-              
             } catch (err) {
               console.error(err);
             }

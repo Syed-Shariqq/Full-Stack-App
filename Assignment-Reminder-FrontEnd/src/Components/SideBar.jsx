@@ -9,7 +9,8 @@ const SideBar = () => {
         localStorage.removeItem("role");
         navigate("/");
     }
-    
+
+    const role = localStorage.getItem("role");
   return (
           <>
           {/* Sidebar */}
@@ -30,7 +31,7 @@ const SideBar = () => {
                   </div>
                    <div 
                    onClick={() => {
-                    navigate("/assignments")
+                    role === "ADMIN" ? navigate("/teacherassignments") : navigate("/assignments")
                    }}
                    className="group flex cursor-pointer px-5 mx-5 h-14 gap-4 items-center justify-start rounded-xl transition-all duration-300 hover:bg-white/5 ">
                       <File className=" h-10 w-10 text-white transition-all duration-300 group-hover:text-[#EC5EFF]

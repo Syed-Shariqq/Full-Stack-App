@@ -1,8 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import Hyperspeed from '../Components/Hyperspeed';
 import SideBar from '../Components/SideBar';
 import DashHeroSection from '../Components/DashHeroSection';
+import Hyperspeed from '../Components/HyperSpeed';
 
 
 const DashBoard = () => {

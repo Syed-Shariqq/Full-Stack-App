@@ -1,3 +1,4 @@
+import { set } from "mongoose";
 import { createContext, useState } from "react";
 
 export const AssignmentContext = createContext();
@@ -13,6 +14,11 @@ export const AssignmentProvider = ({ children }) => {
   const addAssignment = (newAssignment) => {
     
     setAssignments((prev) => [...prev, newAssignment]);
+    setTitle('');
+    setSubject('');
+    setDueDate('');
+    setTime('');
+    setDescription('');
   };
 
   return (

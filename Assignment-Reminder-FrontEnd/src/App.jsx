@@ -11,6 +11,7 @@ import StudentDashboard from './Pages/StudentDashboard'
 import ViewAssignment from './Pages/ViewAssignment'
 import Calendar from './Pages/Calendar'
 import Assignments from './Pages/Assignments'
+import TeacherAssignments from './Pages/TeacherAssignments'
 
 
 const App = () => {
@@ -50,9 +51,7 @@ const App = () => {
             </>
           }
         />
-        <Route path="*" element={<NotFound />} />
-        <Route path="/login/*" element={<NotFound />} />
-        <Route path="/signup/*" element={<NotFound />} />
+        
         <Route path="/dashboard" element={
           <ProtectedRoute allowedRoles={["ADMIN"]}>
             <DashBoard />
@@ -66,8 +65,14 @@ const App = () => {
           }/>
 
           <Route path="/assignments" element = {
-            <ProtectedRoute allowedRoles={["USER","ADMIN"]}>
+            <ProtectedRoute allowedRoles={["USER"]}>
               <Assignments />
+            </ProtectedRoute>
+          }/> 
+
+          <Route path="/teacherassignments" element = {
+            <ProtectedRoute allowedRoles={["ADMIN"]}>
+              <TeacherAssignments />
             </ProtectedRoute>
           }/> 
 
@@ -88,6 +93,10 @@ const App = () => {
                 <Calendar />
               </ProtectedRoute>
             }/>
+
+        <Route path="*" element={<NotFound />} />
+        <Route path="/login/*" element={<NotFound />} />
+        <Route path="/signup/*" element={<NotFound />} />
 
       </Routes>
 
