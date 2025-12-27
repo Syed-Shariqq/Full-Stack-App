@@ -17,10 +17,12 @@ A full-stack web application to help students track assignments and deadlines.
 ## Run Locally
 
 ### Backend
+```bash
 cd backend  
 mvn spring-boot:run  
 
 ### Frontend
+```bash
 cd frontend  
 npm install  
 npm run dev
