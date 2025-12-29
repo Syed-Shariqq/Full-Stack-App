@@ -2,8 +2,9 @@
 # Backend (Spring Boot)
 # ===============================
 Assignment-Reminder-BackEnd/target/
-Assignment-Reminder-BackEnd/*.log
-Assignment-Reminder-BackEnd/application.properties
+Assignment-Reminder-BackEnd/*.log 
+Assignment-Reminder-BackEnd/Assignment/src/main/resources/application.properties
+
 Assignment-Reminder-BackEnd/.env
 
 # Java / Maven
