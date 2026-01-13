@@ -201,33 +201,57 @@ const DashHeroSection = () => {
                     <span>Status</span>
                     <span>Priority</span>
                    </div>
-                   {assignments.map((assignments, index) => (
-                    <div className='grid grid-cols-7 px-10 py-6 text-2xl border-y-2 border-white/30' key={index}>
-                     <span>{assignments?.subject}</span>
-                     <span>{assignments?.title}</span>
-                     <span>{assignments?.dueDate}</span>
-                     <button
-                        disabled={assignments?.completed}
-                        onClick={() => 
-                          getStatus(assignments?.id)
-                        }
-                        className={`
-                          px-4 py-1.5 rounded-full mr-8 font-medium transition
-                          ${assignments?.completed
-                            ? "bg-green-500/20 text-green-400 cursor-default"
-                            : "bg-gray-700 hover:bg-green-500/20 hover:text-green-400"}
-                        `}
-                      >
-                        {assignments?.completed ? "Completed" : "Mark Complete"}
-                      </button>
-                     <span>Priority</span>
-                     <Link to={`/viewassignment/${assignments?.id}`}>
-                       <button className='text-2xl border-2 w-[5vw] hover:bg-gray-300 hover:text-black transition-all duration-300 rounded-2xl border-white/30 '>View</button>
-                     </Link>
-                     <span><BellRing className='hover:text-purple-400 cursor-pointer rounded-full h-8 w-8  transition-all duration-300'/></span>
-                    </div>
-                    
-                   ), console.log(assignments))}
+                   {assignments.map((assignment, index) => {
+                      const isExpired = new Date(assignment?.dueDate) < new Date();
+                      const isCompleted = assignment?.completed;
+
+                      return (
+                        <div
+                          key={index}
+                          className="grid grid-cols-7 px-10 py-6 text-2xl border-y-2 border-white/30"
+                        >
+                          <span>{assignment?.subject}</span>
+                          <span>{assignment?.title}</span>
+                          <span>{assignment?.dueDate}</span>
+
+                          <button
+                            disabled={isCompleted || isExpired}
+                            onClick={() => getStatus(assignment?.id)}
+                            className={`
+                              px-4 py-1.5 rounded-full mr-8 font-medium transition
+                              ${
+                                isCompleted
+                                  ? "bg-green-500/20 text-green-400 cursor-pointer"
+                                  : isExpired
+                                  ? "bg-red-500/20 text-red-400 cursor-not-allowed"
+                                  : "bg-gray-700 hover:bg-green-500/20 cursor-pointer hover:text-green-400"
+                              }
+                            `}
+                          >
+                            {
+                              isCompleted
+                                ? "Completed"
+                                : isExpired
+                                ? "Expired"
+                                : "Mark Complete"
+                            }
+                          </button>
+
+                          <span>Priority</span>
+
+                          <Link to={`/viewassignment/${assignment?.id}`}>
+                            <button className="text-2xl cursor-pointer border-2 w-[5vw] hover:bg-gray-300 hover:text-black transition-all duration-300 rounded-2xl border-white/30">
+                              View
+                            </button>
+                          </Link>
+
+                          <span>
+                            <BellRing className="hover:text-purple-400 cursor-pointer rounded-full h-8 w-8 transition-all duration-300" />
+                          </span>
+                        </div>
+                      );
+                    })}
+
                 </div>
                </div>
              </div>

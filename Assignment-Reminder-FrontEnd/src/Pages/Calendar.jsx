@@ -13,7 +13,8 @@ const AssignmentCalendar = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-screen flex justify-center flex-col items-center p-10 text-white">
+    <div 
+    className="min-h-screen w-screen flex justify-center flex-col items-center p-10 text-white">
       <h1 className="text-4xl shadow-[0_0_20px_rgba(56,189,248,)0.45] drop-shadow-blue-700 font-semibold mb-8">
         Assignment Calendar
       </h1>
@@ -30,7 +31,7 @@ const AssignmentCalendar = () => {
             tileContent={({ date }) => {
               const hasAssignment = assignments.some(
                 a => new Date(a.dueDate).toDateString() === date.toDateString()
-              );
+              ) && date >= new Date();
 
               return hasAssignment ? (
                 <div className="dot"></div>

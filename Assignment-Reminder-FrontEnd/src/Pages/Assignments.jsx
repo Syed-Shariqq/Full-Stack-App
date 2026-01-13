@@ -57,24 +57,30 @@ const Assignments = () => {
                     <span>Status</span>
                     <span>Priority</span>
                    </div>
-                   {assignments.map((assignments, index) => (
+                   {assignments.map((assignments, index) => {
+                    const isExpired = new Date(assignments.dueDate) < new Date();
+                    const isCompleted = assignments?.completed;
+
+                    return (
                     <div className='grid grid-cols-7 px-10 py-6 text-2xl border-y-2 border-white/30' key={index}>
                      <span>{assignments?.subject}</span>
                      <span>{assignments?.title}</span>
                      <span>{assignments?.dueDate}</span>
                      <button
-                        disabled={assignments?.completed}
+                        disabled={isCompleted || isExpired}
                         onClick={() => 
                           getStatus(assignments?.id)
                         }
                         className={`
                           px-4 py-1.5 rounded-full mr-8 font-medium transition
-                          ${assignments?.completed
-                            ? "bg-green-500/20 text-green-400 cursor-default"
-                            : "bg-gray-700 hover:bg-green-500/20 hover:text-green-400"}
+                          ${isCompleted
+                            ? "bg-green-500/20 text-green-400 cursor-pointer"
+                            : isExpired 
+                            ? "bg-red-500/20 text-red-400 cursor-not-allowed"
+                            : "bg-gray-700 hover:bg-green-500/20 cursor-pointer hover:text-green-400"}
                         `}
                       >
-                        {assignments?.completed ? "Completed" : "Mark Complete"}
+                        {isCompleted ? "Completed" : isExpired ? "Expired" : "Mark complete"}
                       </button>
                      <span>Priority</span>
                      <Link to={`/viewassignment/${assignments?.id}`}>
@@ -83,7 +89,7 @@ const Assignments = () => {
                      <span><BellRing className='hover:text-purple-400 cursor-pointer rounded-full h-8 w-8  transition-all duration-300'/></span>
                     </div>
                     
-                   ), console.log(assignments))}
+                   )})}
                 </div>
   )
 }
